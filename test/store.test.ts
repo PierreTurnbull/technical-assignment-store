@@ -57,15 +57,15 @@ describe("AdminStore class - Inheritance and Permissions", () => {
     expect(() => adminStore.read("name")).toThrow();
   });
 
-  it("should not allow reading disallowed keys", () => {
+  it("should not allow reading non existing keys", () => {
     expect(adminStore.allowedToRead("nonExistingKey")).toBe(false);
   });
 
-  it("should not allow writing disallowed keys", () => {
+  it("should not allow writing admin name", () => {
     expect(adminStore.allowedToWrite("name")).toBe(false);
   });
 
-  it("should not allow writing disallowed keys", () => {
+  it("should not allow writing non existing keys", () => {
     expect(adminStore.allowedToWrite("nonExistingKey")).toBe(false);
   });
 });
